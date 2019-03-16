@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/listRecipes"
+        android:title="@string/list_recipes"
+        android:icon="@android:drawable/ic_menu_search"
+        />
+    <item
+        android:id="@+id/favorites"
+        android:title="Избранное"
+        android:icon="@android:drawable/btn_star_big_off"
+        />
+    <item
+        android:id="@+id/addRecipes"
+        android:title="Добавить рецепт"
+        android:icon="@android:drawable/ic_menu_edit"
+        />
+
+</menu>
