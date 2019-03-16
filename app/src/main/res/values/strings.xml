@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">CookBook</string>
-    <string name="list_recipes">Список рецептов</string>
+    <string name="list_recipes">Рецепты</string>
+    <string name="favorite">Избранное</string>
+    <string name="addition">Добавить</string>
+    <string name="desc_image_recipe">Картинка рецепта</string>
+    <string name="label_ingredients">Ингредиенты:</string>
+    <string name="label_cooking_method">Способ приготовления:</string>
+    <string name="hint_ingredient">Ингредиент</string>
+    <string name="hint_desc_cooking">Описание приготовления</string>
 </resources>
