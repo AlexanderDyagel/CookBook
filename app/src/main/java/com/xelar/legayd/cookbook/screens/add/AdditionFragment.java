@@ -75,7 +75,7 @@ public class AdditionFragment extends Fragment {
         final LinearLayout row = new LinearLayout(context);
         ViewGroup.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         row.setLayoutParams(params);
-        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setOrientation(LinearLayout.HORIZONTAL); // Ubuntu
 
         ImageButton btnClearIngredient = new ImageButton(context);
         btnClearIngredient.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
