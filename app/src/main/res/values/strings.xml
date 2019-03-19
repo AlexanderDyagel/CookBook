@@ -11,4 +11,5 @@
     <string name="stringIntentChooser">Выбрать картинку из:</string>
     <string name="toast_camera_not_exists">Камера недоступна</string>
     <string name="error_create_file_image">Ошибка создания файла</string>
+    <string name="title_recipe">Название рецепта</string>
 </resources>

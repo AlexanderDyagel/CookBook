@@ -50,6 +50,7 @@ public class AdditionFragment extends Fragment {
     private ImageButton btnCameraAction;
     private ImageButton btnStorageAction;
     private ImageButton btnDeleteDescription;
+    private EditText etTitleRecipe;
     private EditText etIngredientEdit;
     private EditText etDescription;
     private LinearLayout ingredientsBlock;
@@ -87,7 +88,7 @@ public class AdditionFragment extends Fragment {
                         }
                     }
                 }
-               validateData(recipe, photoURI, ingredients, etDescription.getText().toString());
+               validateData(recipe, etTitleRecipe.getText().toString(), photoURI, ingredients, etDescription.getText().toString());
             }
         });
         btnCameraAction.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +122,7 @@ public class AdditionFragment extends Fragment {
 
     private void initComponents(@NotNull View view) {
         btnAddIngredient = view.findViewById(R.id.btnAddIngredient);
+        etTitleRecipe = view.findViewById(R.id.etTitleRecipe);
         etIngredientEdit = view.findViewById(R.id.etIngredientEdit);
         etIngredientEdit.setId(id++);
         etDescription = view.findViewById(R.id.etDescription);
@@ -231,15 +233,16 @@ public class AdditionFragment extends Fragment {
         }
     }
 
-    private void validateData(Recipe recipe, Uri uri, Set<String> ings, String body){
-        if(body.isEmpty() || ings.isEmpty() || uri == null) {
+    private void validateData(Recipe recipe, String title, Uri uri, Set<String> ings, String body){
+        if(title.isEmpty() || body.isEmpty() || ings.isEmpty() || uri == null) {
             Toast.makeText(getContext(), "Не все данные для сохранения", Toast.LENGTH_SHORT).show();
         } else {
+            recipe.setTitle(title);
             recipe.setUriImage(photoURI.toString());
             List<String> temps = new ArrayList<String>(ings);
             recipe.setIngredients(temps);
             recipe.setBody(etDescription.getText().toString());
-            viewModel.insertData(recipe);
+//            viewModel.insertData(recipe);
             for(String ingr : recipe.getIngredients())
                 Utils.log(ingr);
             Utils.log(recipe.getUriImage());

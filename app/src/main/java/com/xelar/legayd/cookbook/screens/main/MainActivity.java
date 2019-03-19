@@ -9,16 +9,18 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 
 import com.xelar.legayd.cookbook.R;
 import com.xelar.legayd.cookbook.screens.add.AdditionFragment;
 import com.xelar.legayd.cookbook.screens.favorites.FavoriteFragment;
+import com.xelar.legayd.cookbook.screens.notes.NotesFragment;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
-    private LinearLayout contentView;
+    private ViewGroup contentView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 Fragment selectFragment = null;
                 switch (menuItem.getItemId()) {
                     case R.id.addRecipes: {
-                        selectFragment = new AdditionFragment();
+                        selectFragment = new NotesFragment();
                         break;
                     }
                     case R.id.favorites: {

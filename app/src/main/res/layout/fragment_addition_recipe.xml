@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?><!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:padding="8dp">-->
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="#F5F5F5"
     android:padding="8dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#F5F5F5"-->
+    <!--android:padding="8dp">-->
 
     <FrameLayout
         android:id="@+id/frameImage"
@@ -58,6 +68,15 @@
             android:src="@android:drawable/ic_menu_gallery" />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/etTitleRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title_recipe"
+        android:inputType="textCapSentences"
+        app:layout_constraintTop_toBottomOf="@id/buttonBlock"
+        android:maxLength="100" />
+
     <TextView
         android:id="@+id/labelIngredients"
         android:layout_width="wrap_content"
@@ -65,7 +84,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/label_ingredients"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonBlock" />
+        app:layout_constraintTop_toBottomOf="@id/etTitleRecipe" />
 
     <LinearLayout
         android:id="@+id/ingredientsBlock"
@@ -91,7 +110,6 @@
                 android:id="@+id/etIngredientEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/marginLeft_ingredient"
                 android:hint="@string/hint_ingredient"
                 android:inputType="text"
                 android:maxLength="50" />
@@ -115,7 +133,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorWhite"
-        app:layout_constraintTop_toBottomOf="@id/btnAddIngredient">
+        app:layout_constraintBottom_toBottomOf="parent">
+        <!--app:layout_constraintTop_toBottomOf="@id/btnAddIngredient">-->
 
         <LinearLayout
             android:id="@+id/cleaner"
@@ -155,6 +174,7 @@
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:inputType="textMultiLine"
+                    android:maxLines="6"
                     android:overScrollMode="ifContentScrolls" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
@@ -177,4 +197,6 @@
                 android:src="@android:drawable/ic_menu_save" />
         </LinearLayout>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout><!--</ScrollView>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+    <!--</ScrollView>-->
