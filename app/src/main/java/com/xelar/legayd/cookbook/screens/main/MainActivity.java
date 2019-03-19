@@ -1,18 +1,16 @@
 package com.xelar.legayd.cookbook.screens.main;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.Toast;
 
 import com.xelar.legayd.cookbook.R;
 import com.xelar.legayd.cookbook.screens.add.AdditionFragment;
@@ -35,17 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 Fragment selectFragment = null;
                 switch (menuItem.getItemId()) {
                     case R.id.addRecipes: {
-                        Toast.makeText(MainActivity.this, "Добавить", Toast.LENGTH_SHORT).show();
                         selectFragment = new AdditionFragment();
                         break;
                     }
                     case R.id.favorites: {
-                        Toast.makeText(MainActivity.this, "Избранное", Toast.LENGTH_SHORT).show();
                         selectFragment = new FavoriteFragment();
                         break;
                     }
                     case R.id.listRecipes: {
-                        Toast.makeText(MainActivity.this, "Избранное", Toast.LENGTH_SHORT).show();
                         selectFragment = new MainFragment();
                         break;
                     }
@@ -77,5 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent){
+        super.onActivityResult(requestCode, resultCode, intent);
     }
 }

@@ -1,143 +1,180 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:padding="8dp">-->
+<?xml version="1.0" encoding="utf-8"?><!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:padding="8dp">-->
 
-    <android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="8dp">
+
+    <FrameLayout
+        android:id="@+id/frameImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagePrev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_menu_search"
+        app:layout_constraintBottom_toBottomOf="@id/frameImage"
+        app:layout_constraintEnd_toEndOf="@id/frameImage"
+        app:layout_constraintStart_toStartOf="@id/frameImage"
+        app:layout_constraintTop_toTopOf="@id/frameImage" />
+
+    <ImageView
+        android:id="@+id/imageMainRecipe"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@id/frameImage"
+        app:layout_constraintEnd_toEndOf="@id/frameImage"
+        app:layout_constraintStart_toStartOf="@id/frameImage"
+        app:layout_constraintTop_toTopOf="@id/frameImage" />
+
+    <LinearLayout
+        android:id="@+id/buttonBlock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
-
-        <FrameLayout
-            android:id="@+id/frameImage"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/border"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_search"
-            app:layout_constraintBottom_toBottomOf="@id/frameImage"
-            app:layout_constraintEnd_toEndOf="@id/frameImage"
-            app:layout_constraintStart_toStartOf="@id/frameImage"
-            app:layout_constraintTop_toTopOf="@id/frameImage" />
-
-        <LinearLayout
-            android:id="@+id/buttonBlock"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/frameImage">
-
-            <ImageButton
-                android:id="@+id/btnCameraAction"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_menu_camera" />
-
-            <ImageButton
-                android:id="@+id/btnStorageAction"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@android:drawable/ic_menu_gallery" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/labelIngredients"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/label_ingredients"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonBlock" />
-
-        <LinearLayout
-            android:id="@+id/ingredientsBlock"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/labelIngredients">
-
-            <LinearLayout
-                android:id="@+id/ingredientsRow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@android:drawable/ic_menu_edit" />
-
-                <EditText
-                    android:id="@+id/etIngredientEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:maxLength="50"
-                    android:layout_marginLeft="@dimen/marginLeft_ingredient"
-
-
-                    android:hint="@string/hint_ingredient" />
-
-            </LinearLayout>
-
-        </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/frameImage">
 
         <ImageButton
-            android:id="@+id/btnAddIngredient"
+            android:id="@+id/btnCameraAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
-            android:src="@android:drawable/ic_input_add"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ingredientsBlock" />
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_camera" />
 
-        <TextView
-            android:id="@+id/labelCookingMethod"
+        <ImageButton
+            android:id="@+id/btnStorageAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_cooking_method"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnAddIngredient" />
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_gallery" />
+    </LinearLayout>
 
-        <android.support.design.widget.TextInputLayout
+    <TextView
+        android:id="@+id/labelIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/label_ingredients"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonBlock" />
+
+    <LinearLayout
+        android:id="@+id/ingredientsBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelIngredients">
+
+        <LinearLayout
+            android:id="@+id/ingredientsRow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/labelCookingMethod">
+            android:orientation="horizontal">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/etDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_desc_cooking"
-            android:overScrollMode="ifContentScrolls"
-            android:inputType="textMultiLine"
-            app:layout_constraintTop_toBottomOf="@id/labelCookingMethod"/>
-            <Button
-                android:id="@+id/btnSaveRecipe"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_edit" />
+
+            <EditText
+                android:id="@+id/etIngredientEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Добавить"
-                app:layout_constraintTop_toBottomOf="@id/etDescription" />
+                android:layout_marginLeft="@dimen/marginLeft_ingredient"
+                android:hint="@string/hint_ingredient"
+                android:inputType="text"
+                android:maxLength="50" />
 
-        </android.support.design.widget.TextInputLayout>
-        <!--<Button
-            android:id="@+id/btnSaveRecipe"
-            android:layout_width="match_parent"
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnAddIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ingredientsBlock" />
+
+    <!-- ОПИСАНИЕ ПРИГОТОВЛЕНИЯ -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        app:layout_constraintTop_toBottomOf="@id/btnAddIngredient">
+
+        <LinearLayout
+            android:id="@+id/cleaner"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Добавить"
-            app:layout_constraintTop_toBottomOf="@id/etDescription" />-->
-    </android.support.constraint.ConstraintLayout>
-<!--</ScrollView>-->
+            android:layout_gravity="bottom"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnDeleteDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@android:color/transparent"
+                android:paddingBottom="4dp"
+                android:src="@android:drawable/ic_menu_delete" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:hint="@string/hint_desc_cooking">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:inputType="textMultiLine"
+                    android:overScrollMode="ifContentScrolls" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnSaveRecipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@android:color/transparent"
+                android:paddingBottom="4dp"
+                android:src="@android:drawable/ic_menu_save" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout><!--</ScrollView>-->
