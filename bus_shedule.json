@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "number_bus": "1",
+        "start_station": "Больница",
+        "end_station": "Пивзавод",
+        "stations": [
+            {
+                "station_id": "1",
+                "station": "Северная",
+                "arrival_time": [
+                    "12:34",
+                    "14:32"
+                ]
+            },
+            {
+                "station_id": "1",
+                "station": "Больница",
+                "arrival_time": [
+                    "12:34",
+                    "15:14"
+                ]
+            }
+        ]
+    }
+]
